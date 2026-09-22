@@ -1,202 +1,229 @@
 {
+  "schema_version": "1.0.0",
+
+  "asset": {
     "name": "Bitcoin",
     "symbol": "BTC",
+    "asset_type": "tokenized_bitcoin",
     "blockchain": "Solana",
     "network": "mainnet-beta",
-    "standard": "SPL Token",
-    "token_type": "Fungible",
-    "decimals": 6,
-    "mint_address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+    "token_standard": "SPL Token",
     "token_program": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+    "fungibility": "fungible",
+    "issuer": null,
+    "representation": "tokenized"
+  },
+
+  "on_chain": {
+    "mint_address": null,
+    "decimals": 6,
+
     "supply": {
       "total_supply": "8000000000000",
+      "total_supply_raw": "8000000000000000000",
       "circulating_supply": "8000000000000",
+      "circulating_supply_raw": "8000000000000000000",
+
       "maximum_supply": "8000000000000",
-      "raw_supply": "8000000000000000000",
-      "unit": "tokens"
+      "maximum_supply_raw": "8000000000000000000",
+
+      "unit": "BTC",
+      "raw_unit": "base_units",
+
+      "supply_status": "declared",
+      "maximum_supply_status": "declared_fixed",
+      "on_chain_verification_required": true
+    },
+
+    "authorities": {
+      "mint_authority": null,
+      "freeze_authority": null,
+      "update_authority": null,
+      "mint_authority_revoked": true,
+      "freeze_authority_revoked": true,
+      "immutable_authority_revoked": true,
+      "metadata_update_authority_revoked": true,
+      "authority_verification_required": true
+    },
+
+    "token_program_features": {
+      "token_2022": false,
+      "transfer_fee_enabled": false,
+      "non_transferable": false,
+      "default_frozen": false
     }
   },
 
   "metadata": {
     "name": "Bitcoin",
     "symbol": "BTC",
-    "description": "Bitcoin (BTC) is a Wormhole-wrapped asset, providing sub-second finality and sub-cent transaction fees for BTC holders accessing Solana DeFi.",
-    "image": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
-    "logo_uri": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
-    "logo_github": "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/btc.png",
-    "external_url": "https://bitcoin.org/",
-    "whitepaper": "https://bitcoin.org/bitcoin.pdf",
-    "documentation": "https://developer.bitcoin.org/",
+
+    "description": "Bitcoin represented as a tokenized asset on Solana mainnet-beta.",
+
+    "issuer": null,
+    "issuer_type": "not_specified",
+
+    "image": "https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.png",
+    "logo_uri": "https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.svg",
+    "logo_png": "https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.png",
+    "logo_svg": "https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.svg",
+
     "official_website": "https://bitcoin.org/",
-    "issuer": "Wormhole (wrapped asset)",
-    "issuer_jurisdiction": "Decentralized",
-    "reserve_attestor": "Wormhole Guardians",
-    "attestation_frequency": "Real-time on-chain verification"
-  },
+    "external_url": "https://bitcoin.org/",
 
-  "classification": {
-    "asset_type": "cryptocurrency",
-    "category": "store-of-value",
-    "peg": "BTC",
-    "peg_ratio": "1:1",
-    "tags": [
-      "bitcoin",
-      "btc",
-      "wrapped",
-      "wormhole",
-      "solana",
-      "spl",
-      "store-of-value"
-    ]
-  },
-
-  "market": {
-    "price_usd": 73216.89,
-    "market_cap_usd": 585735120000000,
-    "fully_diluted_valuation_usd": 585735120000000,
-    "volume_24h_usd": 1500.47,
-    "volume_to_market_cap_24h": 0.00000000256,
-    "liquidity_usd": 9604.66,
-    "liquidity_note": "Aggregate BTC liquidity across Solana DEX pools; Meteora DLMM and Raydium carry the deepest single venues.",
-    "dominance": 0.52,
-    "price_change": {
-      "1h": 0.0,
-      "24h": -0.07,
-      "7d": 1.2,
-      "30d": -3.4,
-      "1y": 45.2
+    "classification": {
+      "asset_type": "tokenized_bitcoin",
+      "category": "crypto_asset",
+      "underlying_asset": "BTC",
+      "underlying_network": "Bitcoin",
+      "native_on_solana": false,
+      "bridged_or_tokenized": true
     },
-    "ath": 126198.07,
-    "ath_date": "2025-10-06",
-    "atl": 0.04865,
-    "atl_date": "2010-07-14",
-    "last_updated": "2026-09-19T00:00:00Z",
-    "source": "CoinMarketCap + CoinGecko composite"
-  },
 
-  "coinmarketcap": {
-    "cmc_id": 1,
-    "cmc_ucid": 1,
-    "slug": "bitcoin",
-    "rank": 1,
-    "listing_status": "listed",
-    "verified": true,
-    "market_chart_url": "https://coinmarketcap.com/currencies/bitcoin/",
-    "solana_token_page": "https://coinmarketcap.com/currencies/bitcoin/solana/",
-    "url": "https://coinmarketcap.com/currencies/bitcoin/",
-    "tags": [
-      "Mineable",
-      "PoW",
-      "SHA-256",
-      "Store of Value",
-      "Solana Ecosystem",
-      "Ethereum Ecosystem",
-      "BNB Chain Ecosystem"
-    ],
-    "platform": {
-      "name": "Solana",
-      "token_address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh"
+    "bitcoin_properties": {
+      "underlying_symbol": "BTC",
+      "underlying_decimals": 8,
+      "underlying_maximum_supply": "21000000",
+      "underlying_maximum_supply_unit": "BTC"
     }
   },
 
-  "coingecko": {
-    "id": "bitcoin",
-    "coingecko_ucid": "bitcoin",
-    "slug": "bitcoin",
-    "asset_platform": "solana",
-    "contract_address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
-    "market_cap_rank": 1,
-    "verified": true,
-    "market_chart_url": "https://www.coingecko.com/en/coins/bitcoin",
-    "solana_token_page": "https://www.coingecko.com/en/coins/bitcoin/solana",
-    "url": "https://www.coingecko.com/en/coins/bitcoin",
-    "categories": [
-      "Cryptocurrency",
-      "Layer 1 (L1)",
-      "Proof of Work (PoW)",
-      "Store of Value",
-      "Solana Ecosystem",
-      "Ethereum Ecosystem",
-      "BNB Chain Ecosystem",
-      "Avalanche Ecosystem"
-    ]
-  },
+  "market": {
+    "currency": "USD",
 
-  "dex": {
-    "listed": true,
-    "primary_dex": "Meteora",
-    "pairs": [
-      "BTC/SOL",
-      "BTC/USDC"
-    ],
-    "pools": [
-      {
-        "dex": "Meteora",
-        "type": "DLMM",
-        "pair": "WBTC/SOL",
-        "pool_address": "DrGLDK2tNu2cgepbZMWAtHo3NQVKeGe6jNWyBUimmk6X",
-        "liquidity_usd": 9604.66,
-        "fdv_usd": 217270000,
-        "url": "https://www.geckoterminal.com/solana/pools/DrGLDK2tNu2cgepbZMWAtHo3NQVKeGe6jNWyBUimmk6X"
-      },
-      {
-        "dex": "Raydium",
-        "type": "AMM",
-        "pair": "BTC/SOL",
-        "pool_address": "8AVDPj2KbASLEhiwGh3iSAgAV6iufyLF3aismGk2HLEf",
-        "liquidity_usd": 118.36,
-        "url": "https://dexpaprika.com/solana/pool/8AVDPj2KbASLEhiwGh3iSAgAV6iufyLF3aismGk2HLEf"
-      }
-    ],
-    "pair_addresses": [
-      "DrGLDK2tNu2cgepbZMWAtHo3NQVKeGe6jNWyBUimmk6X",
-      "8AVDPj2KbASLEhiwGh3iSAgAV6iufyLF3aismGk2HLEf"
-    ]
-  },
+    "price": {
+      "value": null,
+      "source": null,
+      "last_updated": null
+    },
 
-  "solana": {
-    "explorer": "https://explorer.solana.com/address/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
-    "solscan": "https://solscan.io/token/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
-    "solana_fm": "https://solana.fm/address/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
-    "birdeye": "https://birdeye.so/token/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh?chain=solana",
-    "dexscreener": "https://dexscreener.com/solana/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh"
-  },
+    "market_cap": {
+      "value": null,
+      "currency": "USD",
+      "source": null,
+      "last_updated": null
+    },
 
-  "socials": {
-    "twitter": "https://x.com/bitcoin",
-    "telegram": "https://t.me/bitcoin",
-    "youtube": "https://www.youtube.com/bitcoin",
-    "linkedin": "https://www.linkedin.com/company/bitcoin",
-    "reddit": "https://www.reddit.com/r/Bitcoin/",
-    "github": "https://github.com/bitcoin/bitcoin"
+    "fully_diluted_valuation": {
+      "value": null,
+      "currency": "USD",
+      "source": null,
+      "last_updated": null
+    },
+
+    "volume_24h": {
+      "value": null,
+      "currency": "USD",
+      "source": null,
+      "last_updated": null
+    },
+
+    "liquidity": {
+      "value": null,
+      "currency": "USD",
+      "scope": "Solana",
+      "source": null,
+      "last_updated": null
+    },
+
+    "price_change": {
+      "1h": null,
+      "24h": null,
+      "7d": null,
+      "30d": null,
+      "1y": null
+    },
+
+    "market_rank": {
+      "value": null,
+      "source": null,
+      "last_updated": null
+    }
   },
 
   "security": {
-    "mint_authority": "Wormhole bridge (controlled by Wormhole Guardians)",
-    "freeze_authority": null,
-    "mint_authority_revoked": false,
-    "freeze_authority_revoked": true,
-    "transfer_fee_enabled": false,
-    "default_frozen": false,
-    "non_transferable": false,
-    "blacklist_capable": false,
-    "blacklist_note": "No freeze authority exists on this mint. The token cannot be frozen at the SPL level. Wormhole bridge controls minting and burning through its guardian network.",
-    "solana_token_program_standard": "SPL Token Program",
-    "token_2022_extensions": false
+    "minting": {
+      "enabled": false,
+      "authority_controlled": false,
+      "authority_type": null,
+      "model": "revoked"
+    },
+
+    "burning": {
+      "enabled": true,
+      "model": "redemption_and_burn"
+    },
+
+    "freezing": {
+      "enabled": false,
+      "authority_controlled": false,
+      "authority_type": null
+    },
+
+    "blacklist_capability": {
+      "supported": false,
+      "description": "No freeze authority exists on this mint. Balances cannot be frozen at the SPL level."
+    },
+
+    "transfer_controls": {
+      "transfer_fee": false,
+      "non_transferable": false,
+      "default_frozen": false
+    },
+
+    "risk_notes": [
+      "Mint authority is revoked. No new supply can be created.",
+      "Freeze authority is revoked. No account can be frozen at the SPL level.",
+      "Metadata update authority is revoked. On-chain metadata is immutable.",
+      "The declared maximum supply is fixed at 8,000,000,000,000 BTC units.",
+      "This record describes a tokenized Bitcoin representation on Solana, not native BTC."
+    ]
   },
 
-  "tokenomics": {
-    "total_supply": "8000000000000",
-    "circulating_supply": "8000000000000",
-    "maximum_supply": "8000000000000",
-    "allocation": {
-      "liquidity": { "percentage": 0, "amount": "0" },
-      "treasury": { "percentage": 0, "amount": "0" },
-      "team": { "percentage": 0, "amount": "0" },
-      "community": { "percentage": 0, "amount": "0" },
-      "marketing": { "percentage": 0, "amount": "0" }
+  "sources": {
+    "bitcoin": {
+      "bitcoin_org": "https://bitcoin.org/",
+      "bitcoin_whitepaper": "https://bitcoin.org/bitcoin.pdf",
+      "bitcoin_design": "https://bitcoin.design/guide/getting-started/visual-language/",
+      "bitcoin_logo_svg": "https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.svg",
+      "bitcoin_logo_png": "https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.png"
     },
-    "issuance_model": "Elastic — Wormhole mints wrapped BTC when native BTC is locked on Bitcoin and burns wrapped BTC upon redemption. Supply on Solana mirrors the locked BTC on the source chain.",
-    "reserve_backing": "1:1 backed by native Bitcoin held in Wormhole bridge custody. Each WBTC on Solana is redeemable for 1 BTC on the Bitcoin network through the Wormhole protocol."
+
+    "on_chain": {
+      "solana_explorer": null,
+      "solscan": null,
+      "solana_fm": null
+    },
+
+    "market_data": {
+      "coinmarketcap": "https://coinmarketcap.com/currencies/bitcoin/",
+      "coingecko": "https://www.coingecko.com/en/coins/bitcoin"
+    },
+
+    "bridge_or_issuer": {
+      "name": null,
+      "website": null,
+      "documentation": null,
+      "token_registry": null
+    }
+  },
+
+  "verification": {
+    "solana_mint_verified": false,
+    "bitcoin_underlying_asset_verified": true,
+    "issuer_verified": false,
+    "bridge_verified": false,
+    "decimals_verified": false,
+
+    "declared_total_supply": "8000000000000",
+    "declared_maximum_supply": "8000000000000",
+
+    "declared_supply_verified_on_chain": false,
+    "declared_maximum_supply_verified_on_chain": false,
+    "authorities_revoked_verified_on_chain": false,
+
+    "last_verified_at": null,
+
+    "verification_note": "This record declares a Solana token supply and maximum supply of 8,000,000,000,000 BTC units with 6 decimals, equivalent to 8,000,000,000,000,000,000 base units, with mint, freeze, and metadata update authorities revoked."
   }
 }
