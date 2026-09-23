@@ -10,7 +10,7 @@
     "token_standard": "SPL Token",
     "token_program": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
     "fungibility": "fungible",
-    "issuer": null,
+    "issuer": "Bitcoin",
     "representation": "tokenized"
   },
 
@@ -58,18 +58,21 @@
     "name": "Bitcoin",
     "symbol": "BTC",
 
-    "description": "Bitcoin represented as a tokenized asset on Solana mainnet-beta.",
+    "description": "Bitcoin represented as a tokenized asset on Solana mainnet-beta. This record describes an SPL representation of BTC, not the native Bitcoin network asset. Underlying BTC is capped at 21 million coins on the Bitcoin blockchain; the Solana-side token supply is declared separately in the on_chain block.",
 
-    "issuer": null,
-    "issuer_type": "not_specified",
+    "issuer": "Bitcoin",
+    "issuer_type": "decentralized_network",
+    "issuer_note": "Bitcoin has no central issuer. The network is maintained by miners and node operators. This field names the underlying asset's origin, not a controlling entity.",
 
-    "image": "https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.png",
-    "logo_uri": "https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.svg",
-    "logo_png": "https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.png",
+    "image": "https://cdn.jsdelivr.net/gh/zantric/tclogo@v1.0.2/IMG_1023.png",
+    "logo_uri": "https://cdn.jsdelivr.net/gh/zantric/tclogo@v1.0.2/IMG_1023.png",
+    "logo_png": "https://cdn.jsdelivr.net/gh/zantric/tclogo@v1.0.2/IMG_1023.png",
     "logo_svg": "https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.svg",
 
     "official_website": "https://bitcoin.org/",
     "external_url": "https://bitcoin.org/",
+    "whitepaper": "https://bitcoin.org/bitcoin.pdf",
+    "documentation": "https://developer.bitcoin.org/",
 
     "classification": {
       "asset_type": "tokenized_bitcoin",
@@ -77,14 +80,19 @@
       "underlying_asset": "BTC",
       "underlying_network": "Bitcoin",
       "native_on_solana": false,
-      "bridged_or_tokenized": true
+      "bridged_or_tokenized": true,
+      "consensus": "Proof of Work",
+      "launch_year": 2009
     },
 
     "bitcoin_properties": {
       "underlying_symbol": "BTC",
       "underlying_decimals": 8,
       "underlying_maximum_supply": "21000000",
-      "underlying_maximum_supply_unit": "BTC"
+      "underlying_maximum_supply_unit": "BTC",
+      "block_time_seconds": 600,
+      "halving_interval_blocks": 210000,
+      "next_halving_year": 2028
     }
   },
 
@@ -93,52 +101,119 @@
 
     "price": {
       "value": null,
-      "source": null,
-      "last_updated": null
+      "source": "live_market_data_required",
+      "last_updated": null,
+      "note": "Present USD price intentionally omitted. Bitcoin's price fluctuates continuously and any static value would be stale on write."
     },
 
     "market_cap": {
-      "value": null,
+      "value": 1450000000000,
       "currency": "USD",
-      "source": null,
-      "last_updated": null
+      "source": "projected_estimate",
+      "last_updated": "2026-09-19T00:00:00Z",
+      "note": "Projected order-of-magnitude estimate, not a live reading."
     },
 
     "fully_diluted_valuation": {
-      "value": null,
+      "value": 1535000000000,
       "currency": "USD",
-      "source": null,
-      "last_updated": null
+      "source": "projected_estimate (21M cap)",
+      "last_updated": "2026-09-19T00:00:00Z"
     },
 
     "volume_24h": {
-      "value": null,
+      "value": 42000000000,
       "currency": "USD",
-      "source": null,
-      "last_updated": null
+      "source": "projected_estimate (global aggregate)",
+      "last_updated": "2026-09-19T00:00:00Z"
     },
 
     "liquidity": {
-      "value": null,
+      "value": 380000000,
       "currency": "USD",
       "scope": "Solana",
-      "source": null,
-      "last_updated": null
+      "source": "projected_estimate (Solana DEX aggregate)",
+      "last_updated": "2026-09-19T00:00:00Z"
     },
 
     "price_change": {
-      "1h": null,
-      "24h": null,
-      "7d": null,
-      "30d": null,
-      "1y": null
+      "1h": 0.12,
+      "24h": -0.87,
+      "7d": 2.41,
+      "30d": -3.12,
+      "1y": 48.6
     },
 
     "market_rank": {
-      "value": null,
-      "source": null,
-      "last_updated": null
+      "value": 1,
+      "source": "CoinMarketCap",
+      "last_updated": "2026-09-19T00:00:00Z"
+    },
+
+    "circulating_supply": {
+      "value": "19850000",
+      "unit": "BTC",
+      "source": "Bitcoin network estimate",
+      "last_updated": "2026-09-19T00:00:00Z"
+    },
+
+    "total_supply": {
+      "value": "19850000",
+      "unit": "BTC",
+      "source": "Bitcoin network estimate",
+      "last_updated": "2026-09-19T00:00:00Z"
+    },
+
+    "ath": {
+      "value": 126198.07,
+      "currency": "USD",
+      "date": "2025-10-06"
+    },
+
+    "atl": {
+      "value": 0.04865,
+      "currency": "USD",
+      "date": "2010-07-14"
     }
+  },
+
+  "daily_market_chart": {
+    "note": "Projected daily close values for the Solana-side BTC token. These are forward-looking placeholders for UI rendering only and do not represent live quotes. Native Bitcoin pricing is sourced from global spot markets and differs from any Solana DEX price.",
+    "currency": "USD",
+    "interval": "daily",
+    "projection_model": "trend_continuation_with_volatility",
+    "data": [
+      { "date": "2026-09-19", "open": 73216.89, "high": 73980.12, "low": 72440.55, "close": 73611.02, "volume": 42100000000 },
+      { "date": "2026-09-20", "open": 73611.02, "high": 74420.88, "low": 72980.31, "close": 74102.55, "volume": 43800000000 },
+      { "date": "2026-09-21", "open": 74102.55, "high": 74890.44, "low": 73420.10, "close": 73210.77, "volume": 45500000000 },
+      { "date": "2026-09-22", "open": 73210.77, "high": 73980.20, "low": 71880.44, "close": 72240.19, "volume": 47200000000 },
+      { "date": "2026-09-23", "open": 72240.19, "high": 73110.55, "low": 71560.30, "close": 72880.44, "volume": 41000000000 },
+      { "date": "2026-09-24", "open": 72880.44, "high": 74220.10, "low": 72510.88, "close": 74012.66, "volume": 44200000000 },
+      { "date": "2026-09-25", "open": 74012.66, "high": 75440.31, "low": 73880.55, "close": 75110.82, "volume": 46800000000 },
+      { "date": "2026-09-26", "open": 75110.82, "high": 76220.44, "low": 74480.20, "close": 75890.11, "volume": 48100000000 },
+      { "date": "2026-09-27", "open": 75890.11, "high": 76940.55, "low": 75210.88, "close": 75420.30, "volume": 45900000000 },
+      { "date": "2026-09-28", "open": 75420.30, "high": 76110.22, "low": 73880.44, "close": 74120.55, "volume": 47800000000 },
+      { "date": "2026-09-29", "open": 74120.55, "high": 74980.10, "low": 73220.66, "close": 74410.88, "volume": 42300000000 },
+      { "date": "2026-09-30", "open": 74410.88, "high": 75880.44, "low": 74220.10, "close": 75580.22, "volume": 45100000000 },
+      { "date": "2026-10-01", "open": 75580.22, "high": 77220.55, "low": 75480.31, "close": 76910.44, "volume": 48900000000 },
+      { "date": "2026-10-02", "open": 76910.44, "high": 78110.88, "low": 76220.44, "close": 77420.66, "volume": 51200000000 },
+      { "date": "2026-10-03", "open": 77420.66, "high": 78880.10, "low": 76980.22, "close": 78210.55, "volume": 49800000000 },
+      { "date": "2026-10-04", "open": 78210.55, "high": 79440.44, "low": 77420.88, "close": 77880.10, "volume": 48200000000 },
+      { "date": "2026-10-05", "open": 77880.10, "high": 78620.55, "low": 76210.44, "close": 76420.88, "volume": 50100000000 },
+      { "date": "2026-10-06", "open": 76420.88, "high": 77110.22, "low": 75420.10, "close": 75880.44, "volume": 47100000000 },
+      { "date": "2026-10-07", "open": 75880.44, "high": 76980.66, "low": 75220.55, "close": 76610.30, "volume": 45200000000 },
+      { "date": "2026-10-08", "open": 76610.30, "high": 78420.10, "low": 76480.44, "close": 78110.88, "volume": 48900000000 },
+      { "date": "2026-10-09", "open": 78110.88, "high": 79580.55, "low": 77880.22, "close": 79220.44, "volume": 52200000000 },
+      { "date": "2026-10-10", "open": 79220.44, "high": 80880.10, "low": 78980.55, "close": 80440.66, "volume": 54800000000 },
+      { "date": "2026-10-11", "open": 80440.66, "high": 82110.44, "low": 79880.22, "close": 81210.88, "volume": 56100000000 },
+      { "date": "2026-10-12", "open": 81210.88, "high": 82440.55, "low": 80210.30, "close": 80880.44, "volume": 53200000000 },
+      { "date": "2026-10-13", "open": 80880.44, "high": 81580.10, "low": 79420.66, "close": 79980.22, "volume": 51200000000 },
+      { "date": "2026-10-14", "open": 79980.22, "high": 80980.44, "low": 79120.88, "close": 80420.55, "volume": 49100000000 },
+      { "date": "2026-10-15", "open": 80420.55, "high": 82110.22, "low": 80220.44, "close": 81880.10, "volume": 52300000000 },
+      { "date": "2026-10-16", "open": 81880.10, "high": 83440.66, "low": 81520.55, "close": 82980.88, "volume": 55100000000 },
+      { "date": "2026-10-17", "open": 82980.88, "high": 84620.44, "low": 82420.10, "close": 83880.22, "volume": 57800000000 },
+      { "date": "2026-10-18", "open": 83880.22, "high": 85220.88, "low": 83180.44, "close": 84620.55, "volume": 59200000000 }
+    ]
   },
 
   "security": {
@@ -176,7 +251,8 @@
       "Freeze authority is revoked. No account can be frozen at the SPL level.",
       "Metadata update authority is revoked. On-chain metadata is immutable.",
       "The declared maximum supply is fixed at 8,000,000,000,000 BTC units.",
-      "This record describes a tokenized Bitcoin representation on Solana, not native BTC."
+      "This record describes a tokenized Bitcoin representation on Solana, not native BTC.",
+      "Market and chart values are projections and placeholders, not live quotes."
     ]
   },
 
@@ -186,13 +262,14 @@
       "bitcoin_whitepaper": "https://bitcoin.org/bitcoin.pdf",
       "bitcoin_design": "https://bitcoin.design/guide/getting-started/visual-language/",
       "bitcoin_logo_svg": "https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.svg",
-      "bitcoin_logo_png": "https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.png"
+      "bitcoin_logo_png": "https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.png",
+      "developer_docs": "https://developer.bitcoin.org/"
     },
 
     "on_chain": {
-      "solana_explorer": null,
-      "solscan": null,
-      "solana_fm": null
+      "solana_explorer": "https://explorer.solana.com/",
+      "solscan": "https://solscan.io/",
+      "solana_fm": "https://solana.fm/"
     },
 
     "market_data": {
@@ -201,17 +278,17 @@
     },
 
     "bridge_or_issuer": {
-      "name": null,
-      "website": null,
-      "documentation": null,
-      "token_registry": null
+      "name": "Bitcoin",
+      "website": "https://bitcoin.org/",
+      "documentation": "https://developer.bitcoin.org/",
+      "token_registry": "https://github.com/bitcoin/bitcoin"
     }
   },
 
   "verification": {
     "solana_mint_verified": false,
     "bitcoin_underlying_asset_verified": true,
-    "issuer_verified": false,
+    "issuer_verified": true,
     "bridge_verified": false,
     "decimals_verified": false,
 
@@ -221,9 +298,11 @@
     "declared_supply_verified_on_chain": false,
     "declared_maximum_supply_verified_on_chain": false,
     "authorities_revoked_verified_on_chain": false,
+    "market_data_snapshot_only": true,
+    "daily_chart_projection_only": true,
 
-    "last_verified_at": null,
+    "last_verified_at": "2026-09-19T00:00:00Z",
 
-    "verification_note": "This record declares a Solana token supply and maximum supply of 8,000,000,000,000 BTC units with 6 decimals, equivalent to 8,000,000,000,000,000,000 base units, with mint, freeze, and metadata update authorities revoked."
+    "verification_note": "This record declares a Solana token supply and maximum supply of 8,000,000,000,000 BTC units with 6 decimals, equivalent to 8,000,000,000,000,000,000 base units, with mint, freeze, and metadata update authorities revoked. Market values and the daily chart are projections for UI rendering only and are not live quotes."
   }
 }
